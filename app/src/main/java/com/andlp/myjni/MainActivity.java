@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private void initData(){
         ReLinker.loadLibrary(MainActivity.this, "hellojni");
         txt.setText(JniUtil.test());
-        String gif = "ffmpeg -i /sdcard/DCIM/1.mp4 -vframes 30 -y -f gif /sdcard/abc.gif";
+        String gif = "ffmpeg -i /sdcard/DCIM/1.mp4 -vframes 40 -y -f gif /sdcard/DCIM/abc.gif";
         edit.setText(gif);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
