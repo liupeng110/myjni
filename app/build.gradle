@@ -78,4 +78,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.2.0'
     testCompile 'junit:junit:4.12'
     compile 'com.getkeepsafe.relinker:relinker:1.2.2'
+    compile 'cn.dxjia:ffmpegexecutor:0.1.7'
 }
