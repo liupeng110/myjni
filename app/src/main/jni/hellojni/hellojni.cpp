@@ -46,19 +46,19 @@ extern "C" {
           LOGE("into  callcpp!");
            char msg[] = "callcpp";
 
-
-
-             Point M;                  //用定义好的类创建一个对象 点M
-          M.setPoint(100, 20);         //设置 M点 的x,y值
-          M.printPoint();             //输出 M点 的信息
-          cout<< M.xPos <<endl;       //尝试通过对象M访问属性xPos
-             LOGE("into  callcpp!x:%d",M.xPos);
-             LOGE("into  callcpp!y:%d",M.yPos);
-             LOGE("into  callcpp!x+y:%d",M.yPos+M.xPos);
+          Point M;                   //用定义好的类创建一个对象 点M
+          M.setPoint(101, 231);          //设置 M点 的x,y值
+          M.printPoint();               //输出 M点 的信息
+         // cout<< M.xPos <<endl;       //尝试通过对象M访问属性xPos  私有属性 编译报错
+             LOGE("into  callcpp!x:%d",M.getxPos());
+             LOGE("into  callcpp!y:%d",M.getyPos());
+             LOGE("into  callcpp!x+y:%d",M.getxPos()+M.getyPos());
           char buf[8]="\0";
-          sprintf( buf , "%s%d", msg ,M.yPos+M.xPos);
+          sprintf( buf , "%s%d", msg ,M.getxPos()+M.getyPos());
+
           //jstring jMsg = env->NewStringUTF(msg);
           jstring jMsg = env->NewStringUTF(buf);
+
          return jMsg;
     }
 
