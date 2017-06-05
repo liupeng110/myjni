@@ -34,23 +34,31 @@ public class Activity_Main extends Activity_Base {
     }
     private void initData(){
         ReLinker.loadLibrary(Activity_Main.this, "hellojni");
-        txt.setText(JniUtil.test());
+        txt.setText(JniUtil.callCpp());//test
         String gif = "ffmpeg -i /sdcard/DCIM/1.mp4 -vframes 40 -y -f gif /sdcard/DCIM/abc.gif";
         edit.setText(gif);
 
     }
 
    @Event(R.id.btn) private void btn(View view){
-       String common=edit.getText().toString();
-       if (common==null||common.equals("")){
-           String result= FFmpegNativeHelper.runCommand("ffmpeg -version");
-           txt.setText(result);
-       }else{
-           String result=  FFmpegNativeHelper.runCommand(common);
-           txt.setText(result);
+
+
+       if (true){
+//           txt.setText(JniUtil.callJava());
+           txt.setText(JniUtil.callCpp());
+           return;
        }
-       //        t.setText(JniUtil.callJava());
-       //        t.setText(JniUtil.getCpu());
+
+//       String common=edit.getText().toString();
+//       if (common==null||common.equals("")){
+//           String result= FFmpegNativeHelper.runCommand("ffmpeg -version");
+//           txt.setText(result);
+//       }else{
+//           String result=  FFmpegNativeHelper.runCommand(common);
+//           txt.setText(result);
+//       }
+//       //        t.setText(JniUtil.callJava());
+//       //        t.setText(JniUtil.getCpu());
     }
 
 

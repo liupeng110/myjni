@@ -9,6 +9,7 @@ public class JniUtil {
     public  static native String test();
     public  static native String getCpu();
     public  static native String callJava();
+    public  static native String callCpp();
     public  static String callJava2(){
         return "callJava2";
     }

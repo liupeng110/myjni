@@ -3,6 +3,12 @@
 #include "../hello/hello.h"
 #include <android/log.h>
 
+ #include "iostream"
+ #include "Point.cpp"
+ #include <stdio.h>
+ #include <cstring>
+ using namespace std;
+
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,6 +40,28 @@ extern "C" {
              jstring jMsg = env->NewStringUTF(msg);
        return jMsg;
   }
+
+   JNIEXPORT jstring
+          JNICALL Java_com_andlp_myjni_jni_JniUtil_callCpp(JNIEnv *env, jclass clazz) {
+          LOGE("into  callcpp!");
+           char msg[] = "callcpp";
+
+
+
+             Point M;                  //用定义好的类创建一个对象 点M
+          M.setPoint(100, 20);         //设置 M点 的x,y值
+          M.printPoint();             //输出 M点 的信息
+          cout<< M.xPos <<endl;       //尝试通过对象M访问属性xPos
+             LOGE("into  callcpp!x:%d",M.xPos);
+             LOGE("into  callcpp!y:%d",M.yPos);
+             LOGE("into  callcpp!x+y:%d",M.yPos+M.xPos);
+          char buf[8]="\0";
+          sprintf( buf , "%s%d", msg ,M.yPos+M.xPos);
+          //jstring jMsg = env->NewStringUTF(msg);
+          jstring jMsg = env->NewStringUTF(buf);
+         return jMsg;
+    }
+
 
 
 
@@ -67,6 +95,13 @@ jint JNI_OnLoad(JavaVM* vm, void* reserved)
     LOGI("JNI_VERSION_1_4");
     return JNI_VERSION_1_4;
 }
+
+
+
+
+
+
+
     #if defined(__arm__)
       #if defined(__ARM_ARCH_7A__)
         #if defined(__ARM_NEON__)

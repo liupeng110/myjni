@@ -1,2 +1,2 @@
-set solib-search-path D:/videos/xiaoyoux/myjni/app/src/main/obj/local/armeabi
-directory D:/anzhuang/studio/sdk/ndk-bundle/build//../platforms/android-9/arch-arm/usr/include D:/anzhuang/studio/sdk/ndk-bundle/build//../sources/cxx-stl/system/include D:/videos/xiaoyoux/myjni/app/src/main/jni/hello D:/videos/xiaoyoux/myjni/app/src/main/jni/hellojni
+set solib-search-path E:/work/apps/myjni/app/src/main/obj/local/armeabi
+directory D:/anzhuang/studio/sdk/ndk-bundle/build//../platforms/android-9/arch-arm D:/anzhuang/studio/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++ D:/anzhuang/studio/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include D:/anzhuang/studio/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/libs/armeabi/include D:/anzhuang/studio/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include/backward E:/work/apps/myjni/app/src/main/jni/hello E:/work/apps/myjni/app/src/main/jni/hellojni
